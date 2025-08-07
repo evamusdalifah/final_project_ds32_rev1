@@ -10,8 +10,7 @@ from numerize import numerize
 def projectsatu():
     st.title("Maternal Risk Level Prediction")
     
-    st.write('Maternal Risk Level adalah tingkat resiko kehamilan (low, medium, high) yang dapat diperkirakan berdasarkan beberapa variabel.'\
-         ' Atas hal tersebut, silakan masukan data kesehatan yang dibutuhkan dibawah ini untuk mengetahui tingkat resiko kehamilan anda.')
+    st.write('Maternal Risk Level refers to the level of pregnancy risk (low, medium, high) that can be estimated based on general health. Therefore, you may enter the required health data below to check your pregnancy risk level')
     
     data = pd.read_csv('Maternal Health Risk Data Set.csv', sep=',')
     data['RiskLevel'] = data['RiskLevel'].str.lower()
@@ -22,22 +21,22 @@ def projectsatu():
         age, sis, dias, bs, hr, bt = st.columns(6,vertical_alignment="bottom")
 
         with age:
-            usia = st.number_input('Usia (tahun):', value=0)
+            usia = st.number_input('Age (year):', value=0)
 
         with sis:
-            sistolyc = st.number_input('Tekanan Darah-Sistolik (mmHg):', value=0)
+            sistolyc = st.number_input('Systolic Blood Pressure (mmHg):', value=0)
     
         with dias:
-            diastolyc = st.number_input('Tekanan Darah-Diastolik (mmHg):', value=0)
+            diastolyc = st.number_input('Diastolic Blood Pressure (mmHg):', value=0)
 
         with bs:
-            glucose = st.number_input('Kadar Gula (mmol/L):', value=0)
+            glucose = st.number_input('Blood Glucose (mmol/L):', value=0)
     
         with hr:
-            heartrate = st.number_input('Detak Jantung (per menit):', value=0)
+            heartrate = st.number_input('Hear Rate (per minute):', value=0)
     
         with bt:
-            bodytemp = st.number_input('Suhu Badan (Celcius):', value=0)
+            bodytemp = st.number_input('Body Temperature (Celcius):', value=0)
 
         data_predict = {'usia':usia,'sistolyc':sistolyc,'diastolyc':diastolyc,
                     'glucose':glucose,'heartrate':heartrate,'bodytemp':bodytemp
@@ -65,10 +64,10 @@ def projectsatu():
 
                 if predict ==1:
                     st.info('Low Risk')
-                    st.write('I am very happy knowing that you are in a very good condition. Jaga pola makan,berolahraga dan rutinlah cek kesehatan ke dokter')
+                    st.write("I am very happy knowing that you are in a very good condition. Eat well, stay active, and don't forget to visit your doctor regularly for check-ups!")
                 elif predict ==2:
                     st.info('Medium Risk')
-                    st.write('Jaga pola makan,berolahraga dan rutinlah cek kesehatan ke dokter')
+                    st.write("Eat well, stay active, and don't forget to visit your doctor regularly for check-ups!")
                 elif predict ==3:
                     st.info('High Risk')
-                    st.write('Kamu harus berhati-hati. Jaga pola makan,berolahraga dan rutinlah cek kesehatan ke dokter')
+                    st.write("You need to be careful. Eat well, stay active, and don't forget to visit your doctor regularly for check-ups!")

@@ -2,12 +2,14 @@ import streamlit as st
 
 def about():
     st.title("About Me")
-    st.write("HALOO! Saya Eva, statistician dengan pengalaman tujuh tahun sebagai Inventory Controller dan Procurement Analyst." \
-    " Selama masa kerja saya berhasil melakukan beberapa improvement untuk tujuan cost reduction menggunakan Data Analysis." \
-    " Untuk itu, saat ini saya mengikuti bootcamp Data Science dari Dibimbing untuk mempelajari lebih dalam tentang Data Analyst & Data Science agar bisa bermanfaat untuk lebih banyak orang.")
+    st.write("I'm a statistician with seven years of experience as an Inventory Controller and Procurement Analyst. Having good" \
+        "skills in material stock control, supply chain and data analysis. Successfully achieved the cost reduction project to" \
+        "reduced the excess of material up to 70% and increased the output of production up to 30% using Data Analysis.")
+    
+    st.write('\n')
+    st.write("Recognizing the value of data analysis, I pursued data science to expand my skills and contribute to helping more people through data-informed solutions.")
 
-    st.header("Kontak")
-    st.write("Hubungi saya melalui tautan berikut:")
+    st.header("Contact")
 
     # LinkedIn
     st.markdown(
